@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "title": "AlgoSort",
+    "short": "A webapp to learn DSA & Math for Competitve Programming with visualizations.",
+    "long": "Built an interactive CP learning web app that explains DSA and math through algorithm visualizations, tutorials, step-by-step breakdowns and a clean topic-based layout.",
+    "url": "https://algo-sort-cyan.vercel.app/",
+    "github": "https://github.com/afif1710/AlgoSort",
+    "categories": ["Web App", "DSA", "Visualization"],
+    "year": "2025",
+    "bgColor": "offwhite",
+    "images": ["/assets/algosort/1.png","/assets/algosort/3.png", "/assets/algosort/2.png","/assets/algosort/4.png"]
+  },
+  {
+    "id": "2",
+    "title": "Prompt to Layout",
+    "short": "An interactive webapp which previews UI ideas based on user prompt.",
+    "long": "Prompt to Layout is a full-stack UI studio that maps selected prompts into structured UI layout specs. It generates a component tree (JSON) and provides corresponding React code, renders a real-time preview with themes/variants, and lets users export the output as a ZIP for reuse.",
+    "url": "https://prompt-to-layout.vercel.app/",
+    "github": "https://github.com/afif1710/prompt_to_layout",
+    "categories": ["Web App", "Full-Stack", "UI Generator"],
+    "year": "2025",
+    "bgColor": "amber-soft",
+    "images": ["/assets/prompt_to_layout/1.png", "/assets/prompt_to_layout/3.png", "/assets/prompt_to_layout/2.png", "/assets/prompt_to_layout/4.png"]
+  },
+  {
+    "id": "3",
+    "title": "Upcoming",
+    "short": "",
+    "long": "",
+    "url": "https://aether.app",
+    "categories": [],
+    "year": "2026",
+    "bgColor": "mint-soft",
+    "images": ["/assets/proj3.svg"]
+  }
+]
