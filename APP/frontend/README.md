@@ -1,15 +1,20 @@
-# Portfolio (Frontend)
+# Portfolio
 
-This is the frontend of my personal portfolio, built with Create React App.
+My personal portfolio website.
 
-## Setup
+## Frontend
+
+### Run locally
 
 ```bash
+cd APP/frontend
 npm install
-
 npm start
-npm test
+```
+
+### Build
+
+```bash
+cd APP/frontend
 npm run build
-npm run eject
-
-
+```
