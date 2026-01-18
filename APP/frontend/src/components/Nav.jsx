@@ -79,15 +79,17 @@ const Nav = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black/95 backdrop-blur-md"
+            className="md:hidden bg-black/95 backdrop-blur-md relative z-50"
+            style={{ pointerEvents: 'auto' }}
           >
+
             <div className="px-4 py-6 space-y-4">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  className="block text-white/80 hover:text-light-pink transition-colors py-2 text-lg"
+                  className="block text-white/80 hover:text-light-pink transition-colors py-2 text-lg cursor-pointer touch-manipulation"
                 >
                   {link.label}
                 </a>
