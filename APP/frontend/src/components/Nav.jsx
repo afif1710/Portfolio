@@ -22,12 +22,29 @@ const Nav = () => {
 
   const scrollToSection = (e, href) => {
     e.preventDefault();
+    e.stopPropagation(); // Stop event from bubbling
+    
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Get element position
+      const navHeight = 80; // Account for fixed nav
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+      
+      // Close menu immediately (don't wait)
+      setIsMobileOpen(false);
+      
+      // Scroll after menu starts closing
+      requestAnimationFrame(() => {
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      });
     }
-    setIsMobileOpen(false);
   };
+
+
 
   return (
     <motion.nav
