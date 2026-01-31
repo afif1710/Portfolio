@@ -13,6 +13,7 @@ const ContactForm = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,18 +22,29 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setIsError(false);
     
-    // REPLACE_ME: Integrate with Formspree or your serverless function
-    // Example Formspree: action="https://formspree.io/f/YOUR_FORM_ID"
-    // For now, simulate submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    setIsLoading(false);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000);
+    try {
+      const response = await fetch('https://formspree.io/f/xwvbjwja', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        setIsError(true);
+      }
+    } catch (error) {
+      setIsError(true);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -149,36 +161,38 @@ const ContactForm = () => {
                 />
               </div>
 
-              <button
-                type="submit"
-                disabled={isLoading || isSubmitted}
-                className="w-full bg-black text-white px-8 py-4 rounded-full font-mono text-sm uppercase tracking-wider hover:bg-black/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-              >
-                {isLoading ? (
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                    className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
-                  />
-                ) : isSubmitted ? (
-                  <>
-                    <CheckCircle className="w-5 h-5" />
-                    Message Sent!
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-5 h-5" />
-                    Send Message
-                  </>
+              <div className="space-y-3">
+                <button
+                  type="submit"
+                  disabled={isLoading || isSubmitted}
+                  className="w-full bg-black text-white px-8 py-4 rounded-full font-mono text-sm uppercase tracking-wider hover:bg-black/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                >
+                  {isLoading ? (
+                    <motion.div
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                      className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
+                    />
+                  ) : isSubmitted ? (
+                    <>
+                      <CheckCircle className="w-5 h-5" />
+                      Message Sent!
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5" />
+                      Send Message
+                    </>
+                  )}
+                </button>
+                
+                {isError && (
+                  <p className="text-red-500 text-sm text-center">
+                    Something went wrong. Please email me directly instead.
+                  </p>
                 )}
-              </button>
+              </div>
             </form>
-
-            {/* Formspree note */}
-            <p className="mt-4 text-sm text-mid-grey text-center">
-              {/* REPLACE_ME: Remove this note after setting up Formspree */}
-              Form submissions are simulated as of now. Email me anytime.
-            </p>
           </motion.div>
         </div>
       </div>
