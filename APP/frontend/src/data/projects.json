@@ -25,13 +25,14 @@
   },
   {
     "id": "3",
-    "title": "Upcoming",
-    "short": "",
-    "long": "",
-    "url": "https://aether.app",
-    "categories": [],
+    "title": "CalcHub",
+    "short": "A unified suite of 80+ specialized calculators and unit converters required in our day to day lives",
+    "long": "CalcHub is an all-in-one productivity platform featuring an expansive library of over 80 precision tools. Organized into categories like Finance, Health, Real Estate, Developer Tools and many more, it simplifies complex calculations through a modern, responsive & easy to use interface. Built for speed and accuracy, it eliminates the need for multiple single-purpose apps by centralizing everything from mortgage ROI to BMI tracking in one high-performance dashboard.",
+    "url": "https://calculator-hub-beta.vercel.app",
+    "github": "https://github.com/afif1710/calculator-hub",
+    "categories": ["Calculator", "Web Tool", "Converter"],
     "year": "2026",
     "bgColor": "mint-soft",
-    "images": ["/assets/proj3.svg"]
+    "images": ["/assets/Calchub/c1.png", "/assets/Calchub/c2.png", "/assets/Calchub/c3.png", "/assets/Calchub/c4.png"]
   }
 ]
