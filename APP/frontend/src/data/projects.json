@@ -8,20 +8,19 @@
     "github": "https://github.com/afif1710/AlgoSort",
     "categories": ["Web App", "DSA", "Visualization"],
     "year": "2025",
-    "bgColor": "offwhite",
-    "images": ["/assets/algosort/1.png","/assets/algosort/3.png", "/assets/algosort/2.png","/assets/algosort/4.png"]
+    "bgColor": "dark-card",
+    "images": ["/assets/algosort/1.png","/assets/algosort/3.png", "/assets/algosort/2.png","/assets/algosort/4.png", "/assets/algosort/5.png"]
   },
   {
-    "id": "2",
-    "title": "Prompt to Layout",
-    "short": "An interactive webapp which previews UI ideas based on user prompt.",
-    "long": "Prompt to Layout is a full-stack UI studio that maps selected prompts into structured UI layout specs. It generates a component tree (JSON) and provides corresponding React code, renders a real-time preview with themes/variants, and lets users export the output as a ZIP for reuse.",
-    "url": "https://prompt-to-layout.vercel.app/",
-    "github": "https://github.com/afif1710/prompt_to_layout",
-    "categories": ["Web App", "Full-Stack", "UI Generator"],
-    "year": "2025",
-    "bgColor": "amber-soft",
-    "images": ["/assets/prompt_to_layout/1.png", "/assets/prompt_to_layout/3.png", "/assets/prompt_to_layout/2.png", "/assets/prompt_to_layout/4.png"]
+    "id": "4",
+    "title": "TypeHue",
+    "short": "A professional desktop app for managing fonts and colors locally.",
+    "long": "TypeHue is a premium, one-time purchase desktop application built with Tauri. It empowers designers and developers to manage their local font libraries and color palettes with ease, ensuring your creative assets are always under your control. Desktop only application designed for maximum performance.",
+    "url": "https://type-hue-landing-page.vercel.app/",
+    "categories": ["Desktop App", "Tauri", "Design Tool"],
+    "year": "2026",
+    "bgColor": "dark-neutral",
+    "images": ["/assets/typehue/2.png", "/assets/typehue/1.png", "/assets/typehue/3.png", "/assets/typehue/4.png", "/assets/typehue/5.png"]
   },
   {
     "id": "3",
@@ -32,7 +31,19 @@
     "github": "https://github.com/afif1710/calculator-hub",
     "categories": ["Calculator", "Web Tool", "Converter"],
     "year": "2026",
-    "bgColor": "mint-soft",
+    "bgColor": "dark-zinc",
     "images": ["/assets/Calchub/c1.png", "/assets/Calchub/c2.png", "/assets/Calchub/c3.png", "/assets/Calchub/c4.png"]
+  },
+  {
+    "id": "2",
+    "title": "Prompt to Layout",
+    "short": "An interactive webapp which previews UI ideas based on user prompt.",
+    "long": "Prompt to Layout is a full-stack UI studio that maps selected prompts into structured UI layout specs. It generates a component tree (JSON) and provides corresponding React code, renders a real-time preview with themes/variants, and lets users export the output as a ZIP for reuse.",
+    "url": "https://prompt-to-layout.vercel.app/",
+    "github": "https://github.com/afif1710/prompt_to_layout",
+    "categories": ["Web App", "Full-Stack", "UI Generator"],
+    "year": "2025",
+    "bgColor": "dark-slate",
+    "images": ["/assets/prompt_to_layout/1.png", "/assets/prompt_to_layout/3.png", "/assets/prompt_to_layout/2.png", "/assets/prompt_to_layout/4.png"]
   }
 ]

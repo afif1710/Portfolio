@@ -8,8 +8,8 @@ const About = () => {
   const { reducedMotion } = useAccessibility();
 
   const skills = [
-    'React', 'TypeScript', 'Node.js', 'Django', 'DevOps',
-    'Tailwind CSS', 'UI/UX', 'Flutter', 'React Native', 'Web Development/Design',  'Mobile App Development'
+    'React', 'TypeScript', 'Django', 'DevOps',
+    'Tailwind CSS', 'UI/UX', 'React Native', 'Web Development/Design',  'Mobile App Development', 'Desktop Application'
   ];
 
   const containerVariants = {

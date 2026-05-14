@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Facebook, ArrowUp } from 'lucide-react';
+import { Github, Linkedin, Twitter, ArrowUp } from 'lucide-react';
 import { useAccessibility } from '../context/AccessibilityContext';
 import profile from '../data/profile.json';
 
@@ -8,7 +8,7 @@ import profile from '../data/profile.json';
 const socialIcons = {
   github: Github,
   linkedin: Linkedin,
-  facebook: Facebook,
+  twitter: Twitter,
 };
 
 

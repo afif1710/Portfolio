@@ -5,25 +5,10 @@ import { useAccessibility } from '../context/AccessibilityContext';
 import projects from '../data/projects.json';
 
 const bgColorMap = {
-  // existing
-  'light-pink': 'bg-light-pink',
-  'mid-purple': 'bg-mid-purple',
-  'light-yellow': 'bg-light-yellow',
-  'mid-blue': 'bg-mid-blue',
-  'grey': 'bg-grey',
-  'mid-green': 'bg-mid-green',
-
-  // “paper” / light cards (if you want some cards light)
-  'offwhite': 'bg-neutral-50',
-  'paper': 'bg-stone-50',
-  'soft-grey': 'bg-zinc-50',
-
-  // muted accents (still readable with black text usually)
-  'rose-soft': 'bg-rose-300',
-  'violet-soft': 'bg-violet-300',
-  'sky-soft': 'bg-sky-200',
-  'mint-soft': 'bg-emerald-300',
-  'amber-soft': 'bg-amber-300',
+  'dark-card': 'bg-[#1a1a1a] border border-white/[0.05]',
+  'dark-slate': 'bg-[#1e293b]/20 border border-white/[0.05]',
+  'dark-zinc': 'bg-[#27272a]/20 border border-white/[0.05]',
+  'dark-neutral': 'bg-[#262626]/20 border border-white/[0.05]',
 };
 
 
@@ -40,7 +25,7 @@ const ProjectCard = ({ project, onClick }) => {
       viewport={{ once: true, margin: '-50px' }}
       whileHover={reducedMotion ? {} : { y: -8, transition: { duration: 0.2 } }}
       onClick={onClick}
-      className={`${bgClass} rounded-lg p-6 cursor-pointer group relative overflow-hidden min-h-[320px] flex flex-col`}
+      className={`${bgClass} rounded-2xl p-6 cursor-pointer group relative overflow-hidden min-h-[320px] flex flex-col backdrop-blur-sm transition-all duration-300 hover:border-white/20`}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {
@@ -72,16 +57,16 @@ const ProjectCard = ({ project, onClick }) => {
 
       {/* Content */}
       <div className="relative z-10 mt-auto pt-4">
-        <h3 className="font-display text-2xl font-bold text-black mb-2 group-hover:underline">
+        <h3 className="font-display text-2xl font-bold text-white mb-2 group-hover:text-light-pink transition-colors">
           {project.title}
         </h3>
-        <p className="text-black/60 mb-4">{project.short}</p>
+        <p className="text-white/60 mb-4 line-clamp-2">{project.short}</p>
 
         <div className="flex flex-wrap gap-2">
           {project.categories?.map((cat) => (
             <span
               key={cat}
-              className="bg-black text-white px-3 py-1 rounded-full font-mono text-xs uppercase tracking-wider"
+              className="bg-white/10 text-white/80 px-3 py-1 rounded-full font-mono text-[10px] uppercase tracking-wider border border-white/5"
             >
               {cat}
             </span>
@@ -128,35 +113,35 @@ const ProjectModal = ({ project, onClose }) => {
           exit={reducedMotion ? {} : { scale: 0.95, opacity: 0 }}
           transition={{ type: 'spring', duration: 0.5 }}
           onClick={(e) => e.stopPropagation()}
-          className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+          className="bg-[#151515] rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-white/10"
         >
           {/* Header */}
-          <div className={`${headerBg} p-8 relative`}>
+          <div className={`${headerBg} p-8 relative border-b border-white/5`}>
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 p-2 bg-black/10 rounded-full hover:bg-black/20 transition-colors"
+              className="absolute top-4 right-4 p-2 bg-white/10 text-white rounded-full hover:bg-white/20 transition-colors"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <span className="inline-block bg-black/10 px-3 py-1 rounded-full font-mono text-xs mb-4">
+            <span className="inline-block bg-white/10 text-white/80 px-3 py-1 rounded-full font-mono text-xs mb-4">
               {project.year}
             </span>
 
-            <h2 className="font-display text-3xl font-bold text-black">{project.title}</h2>
+            <h2 className="font-display text-3xl font-bold text-white">{project.title}</h2>
           </div>
 
           {/* Content */}
-          <div className="p-8">
-            <p className="text-dark-grey text-lg leading-relaxed mb-6">{project.long}</p>
+          <div className="p-8 bg-[#151515]">
+            <p className="text-white/70 text-lg leading-relaxed mb-6">{project.long}</p>
 
             {/* Categories */}
             <div className="flex flex-wrap gap-2 mb-6">
               {project.categories?.map((cat) => (
                 <span
                   key={cat}
-                  className="bg-mid-purple text-black px-4 py-2 rounded-full font-mono text-xs uppercase tracking-wider"
+                  className="bg-white/10 text-white/90 px-4 py-2 rounded-full font-mono text-xs uppercase tracking-wider border border-white/5"
                 >
                   {cat}
                 </span>
@@ -209,7 +194,7 @@ const ProjectModal = ({ project, onClose }) => {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-mono text-sm uppercase tracking-wider hover:bg-black/80 transition-colors"
+                  className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-mono text-sm uppercase tracking-wider border border-white/20 hover:border-light-pink hover:text-light-pink hover:scale-105 transition-all duration-300"
                 >
                   Visit Webapp Live
                   <ExternalLink className="w-4 h-4" />

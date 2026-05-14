@@ -67,10 +67,10 @@ const Hero = () => {
   const { reducedMotion } = useAccessibility();
   const containerRef = useRef(null);
 
-  const scrollToAbout = () => {
-    const aboutSection = document.querySelector('#about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' });
+  const scrollToProjects = () => {
+    const projectsSection = document.querySelector('#projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth' });
     }
   };
 
@@ -153,7 +153,7 @@ const Hero = () => {
             </a>
 
             <button
-              onClick={scrollToAbout}
+              onClick={scrollToProjects}
               className="inline-flex items-center gap-2 border border-white/30 text-white px-8 py-4 rounded-full font-mono text-sm uppercase tracking-wider hover:bg-white/10 transition-colors duration-300"
             >
               View Work
@@ -170,7 +170,7 @@ const Hero = () => {
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <motion.button
-          onClick={scrollToAbout}
+          onClick={scrollToProjects}
           animate={reducedMotion ? undefined : { y: [0, 10, 0] }}
           transition={reducedMotion ? undefined : { duration: 2, repeat: Infinity }}
           className="text-white/50 hover:text-white transition-colors"
