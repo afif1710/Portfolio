@@ -16,7 +16,7 @@
     "title": "TypeHue",
     "short": "A professional desktop app for managing fonts and colors locally.",
     "long": "TypeHue is a premium, one-time purchase desktop application built with Tauri. It empowers designers and developers to manage their local font libraries and color palettes with ease, ensuring your creative assets are always under your control. Desktop only application designed for maximum performance.",
-    "url": "https://type-hue-landing-page.vercel.app/",
+    "url": "https://typehue.vercel.app",
     "categories": ["Desktop App", "Tauri", "Design Tool"],
     "year": "2026",
     "bgColor": "dark-neutral",
