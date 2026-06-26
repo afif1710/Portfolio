@@ -6,6 +6,7 @@ import Nav from './components/Nav';
 import Hero from './components/Hero';
 import About from './components/About';
 import ProjectsGrid from './components/ProjectsGrid';
+import CraftedWebStudio from './components/CraftedWebStudio';
 import Timeline from './components/Timeline';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
@@ -21,6 +22,7 @@ function App() {
           <Hero />
           <About />
           <ProjectsGrid />
+          <CraftedWebStudio />
           <Timeline />
           <ContactForm />
           <FloatingBadge />

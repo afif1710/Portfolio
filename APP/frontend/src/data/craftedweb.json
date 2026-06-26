@@ -1,0 +1,14 @@
+{
+  "url": "https://craftedwebstudio.vercel.app",
+  "badge": "Website Template Marketplace",
+  "caption": "Check out my premium website template marketplace — designed, built, and run entirely by me.",
+  "titleLine1": "CraftedWeb",
+  "titleAccent": "Studio",
+  "description": "A premium marketplace for React and Tailwind website templates — built so brands and creators can launch polished sites in hours, not weeks.",
+  "highlights": [
+    "20+ templates across SaaS, portfolio, e-commerce, and landing pages",
+    "Production-ready React + Tailwind code",
+    "Licensed via Gumroad"
+  ],
+  "stats": ["20+ Templates", "React & Tailwind", "Gumroad Store"]
+}
