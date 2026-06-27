@@ -73,17 +73,17 @@ const ShowcaseSlideshow = ({ slides, reducedMotion }) => {
       <div className="aspect-video relative w-full">
         <div className="absolute inset-4 bg-mid-purple rounded-2xl" aria-hidden="true" />
         <div className="absolute inset-0 bg-grey rounded-2xl overflow-hidden border border-black/5">
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
             <motion.img
               key={current.src}
               src={current.src}
               alt={current.alt}
-              className="w-full h-full object-cover object-top"
+              className="absolute inset-0 w-full h-full object-cover object-top"
               loading="lazy"
               initial={reducedMotion ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={reducedMotion ? undefined : { opacity: 0 }}
-              transition={{ duration: 0.45 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
             />
           </AnimatePresence>
         </div>
