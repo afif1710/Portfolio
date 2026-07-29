@@ -23,6 +23,17 @@
     "images": ["/assets/typehue/2.png", "/assets/typehue/1.png", "/assets/typehue/3.png", "/assets/typehue/4.png", "/assets/typehue/5.png"]
   },
   {
+    "id": "5",
+    "title": "BillDesk",
+    "short": "An offline-first desktop app for freelancers to invoice, track time, and manage their finances.",
+    "long": "BillDesk is a premium, one-time purchase desktop application for freelancers, built with Electron and React. It brings invoicing, time tracking, expenses, mileage, and financial reports together in a single offline-first workspace, storing every record locally with SQLite so your data never leaves your machine. It generates professional PDF invoices, supports hourly and fixed-price projects across multiple currencies (USD, EUR, GBP), and ships for both Windows and macOS with a simple 7-day trial and no subscription.",
+    "url": "https://getbilldesk.vercel.app",
+    "categories": ["Desktop App", "Electron", "Finance Tool"],
+    "year": "2026",
+    "bgColor": "dark-card",
+    "images": ["/assets/billdesk/1.png", "/assets/billdesk/2.png", "/assets/billdesk/3.png", "/assets/billdesk/4.png", "/assets/billdesk/5.png"]
+  },
+  {
     "id": "3",
     "title": "CalcHub",
     "short": "A unified suite of 80+ specialized calculators and unit converters required in our day to day lives",
