@@ -25,7 +25,7 @@ const ProjectCard = ({ project, onClick }) => {
       viewport={{ once: true, margin: '-50px' }}
       whileHover={reducedMotion ? {} : { y: -8, transition: { duration: 0.2 } }}
       onClick={onClick}
-      className={`${bgClass} rounded-2xl p-6 cursor-pointer group relative overflow-hidden min-h-[320px] flex flex-col backdrop-blur-sm transition-all duration-300 hover:border-white/20`}
+      className={`${bgClass} rounded-2xl p-6 cursor-pointer group relative min-h-[320px] flex flex-col backdrop-blur-sm transition-all duration-300 hover:border-white/20`}
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {
@@ -74,13 +74,24 @@ const ProjectCard = ({ project, onClick }) => {
         </div>
       </div>
 
-      {/* Hover indicator */}
-      <motion.div
-        className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity"
-        whileHover={reducedMotion ? {} : { scale: 1.1 }}
-      >
-        <ExternalLink className="w-5 h-5 text-black/50" />
-      </motion.div>
+      {/* Live project link: revealed with the card controls on hover/focus. */}
+      {project.url && (
+        <motion.a
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Visit ${project.title} live site`}
+          onClick={(event) => event.stopPropagation()}
+          className="group/live-link absolute top-5 right-5 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-black/60 text-white opacity-100 shadow-lg backdrop-blur-sm transition-all duration-300 lg:opacity-0 lg:group-hover:opacity-100 lg:group-focus-within:opacity-100 hover:border-light-pink hover:bg-light-pink hover:text-black hover:shadow-[0_0_20px_rgba(255,183,197,0.35)] focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-light-pink focus:ring-offset-2 focus:ring-offset-[#151515]"
+          whileHover={reducedMotion ? {} : { scale: 1.08 }}
+          whileTap={reducedMotion ? {} : { scale: 0.96 }}
+        >
+          <ExternalLink className="h-4 w-4" aria-hidden="true" />
+          <span className="pointer-events-none absolute bottom-full right-0 mb-2 w-max translate-y-1 rounded border border-white/10 bg-[#151515] px-2 py-1 font-mono text-[9px] uppercase tracking-wide text-white opacity-0 shadow-lg transition-all duration-200 group-hover/live-link:translate-y-0 group-hover/live-link:opacity-100 group-focus/live-link:translate-y-0 group-focus/live-link:opacity-100">
+            Visit live site
+          </span>
+        </motion.a>
+      )}
     </motion.article>
   );
 };
